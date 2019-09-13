@@ -1,0 +1,98 @@
+Heterogeneity : 이질성, 다른 운영체제들
+Scalability : 확장하면 할수록 성능이 늘어나야 함을 의미한다. ( 단어에 대한 의미가 시험에 나오면 전공에 맞는 의미를 써야 한다.) -> performance
+Failure handling : 하나가 고장나더라도 오류를 잘 핸들링하여 서비스를 계속 할 수 있다.
+Concurrency : 병행성.  (패러렐과 비슷하지만 컨커런시는 논리적 개념이고, 패러렐을 물리적 개념이다. 컴퓨터를 실제로 여러 개 연결하는것과 쓰레드 프로세싱의 차이)
+Transparency : 실제는 분산이 되어있지만, 분산되어 있음을 숨기는 것.
+
+Web은 application 계층에 있다.(브라우저)
+Internet은 tcp/ip 프로토콜을 사용하는 모든 것은 인터넷이다.
+Ubiquitous : 여기, 저기, 어디에나 라는 의미를 가지고 있다. VR은 우리가 컴퓨터세상으로 들어간다면, 그 반대로 컴퓨터가 그 어디에나 있는 것.
+
+Macro : 거시
+Micro : 미시
+
+Terminology : 용어. 정의. 염두하면서 강의를 들을 것.
+
+Incremental : 점진적인
+
+
+Fault tolerance : 하나가 고장나더라도 나머지가 서비스하면 된다.
+
+Continuous availability : 실패를 고려한 가용성. 1에 가까워야 한다.
+Middleware : 단일 소프트웨어처럼 보이게 해주는 도구
+
+Web browsers는 a pache(patch file과 유사한 이름) 오픈소스를 기반으로 서버를 제공하는 소프트웨어이다.
+
+Buzzwords : 유행어 ( 하도 많이 들린다는 의미에서)
+I(internet of things) C(cloud computing) B(big data) A( A.I) M(mobile)
+
+Big data는 하드웨어 장비가 저렴해지고 공간의 제약이 줄어서 이용가능성이 비약적으로 상승한 경우이다. visualization하여 쓸 수 있는 데이터로 만든다.
+
+VUCA (뷰카) : volatile(변덕스러운, 휘발성) uncertain complex ambiguous. 미래를 이야기 하는 경우에도 사용가능한 표현
+
+Infra as a service ( IaaS)
+
+Infrastructure : 기반구조
+
+현재는 웹하드보단 스트리밍이다.
+HPC : high performance computer
+Security
+    1. Confidentiality
+    2. Integrity
+    3. Availability 서비스 제공 확률(99.999에 가까워야 한다.) 이를 손상시키는 것은 DDoS공격이다
+시큐리티의 항목중 하나라도 어기게 되면 침입이라고 여긴다.
+
+Access transparency : 분산 시스템 본체에 있는 함수와 로컬 컴퓨터 내의 함수 호출에 있어서 다름을 느끼게 만들어져서는 안된다.
+
+Response time 과 throughput은 trade off 관계이다. 하나가 올라가면 하나가 떨어지게 된다.
+Vendor : 판다는 의미
+
+Platform은 OS를 의미한다.
+자바는 플랫폼에 상관없다.(platform independent)JVM interpreter
+
+Scalability : 시스템 사용자가 늘어나거나, 자원이 늘어나더라도 관리에 있어서 과부하가 되지 않고 성능이 떨어지면 안된다. 그래프가 상승하다가 일자 상태로 포화되면 스케일러블하지 못하다는 의미이다. 익스펜더빌리티보다 그 이상의 개념이다.
+
+
+10.
+scalable하다 -> 일정하게 증가하고, 감소하지않는다 성능이 감소하게 되는 경우 scalable하다고 할 수 없다.
+Javascript (인터프리터방식)
+Java(sun microsystems : OOP, platform independence(자바가 사용가능한 모든 플랫폼에서 동작가능) <->(write once, run anywhere) 
+Java applets이란, 서버에 파일을 요청하면, 요청한 파일내에 애플릿코드가 있을 시에 클라이언트에 있는 jvm을 이용하여 클라이언트에서 처리하게 하는 것이고, 이 파일들을 applets이라고 했다. 하지만 이런 이유로 애플릿은 보안에 의한 이유로 특정 메모리 영역을 write할 수 없게 되어있었다.
+
+GIGO(garbage in garbage out) -> scaling techniques example(1)에서 check form에 대한 이야기이다.
+
+Generic domain -> com , edu etc…
+
+Multiprocessor
+    1. Multiprogramming 자원의 효율을 극대화하기 위해 idle시에(I/O할 시 자원이 안쓰임) 다른 프로그램에 자원을 쓴다.(context switching) 다른 사용자들 사이에서.
+    2. Multitasking 단일 사용자가 독립된 프로그램을 여러 생성할 경우($gcc hi.c –o hi & 시에 프롬프트가 바로 다시 나온다.)
+    3. Multithreading -> 한 프로그램 내에서 스위칭(코드 전환)
+
+PCB에서 프로세스의 상태를 저장하고 빼오고 하는 것이 context switching인데, 이것은 저장할 것이 많지만, 쓰레드간의 스위칭은 다른점이 크게 없기 떄문에 다른 점만 저장하고 스위칭하면 되므로 쓰레드 컨텍스트 스위칭은 빠르다.
+
+Fork는 프로세스 스위칭 방식이다.
+쓰레드 스위칭은 무엇이지? 하나의 프로그램 내의 코드에서 사용되는 방식이라는데..
+
+Single point of failure : 버스 하나의 고장으로 인해 시스템 전체가 고장이 나게 되는 것.
+
+
+Multiprocessors and multicomputers
+shared, bus based system에서는 부하 균형(load balancing)이 잘 이루어져 있다.
+Private, bus based system에서는 메모리 fault시에 isolate시키고 나머지 시스템을 구동할 수 있다.
+
+
+계층구조
+App
+Tcp
+Ip
+
+
+Abstraction : 자세한 내부 구현 내용을 몰라도, 이용이 가능하다(추상화)
+Meta :한단계 위의. Ex)meta data : 영화에 대한 데이터가 있다면, 영화 개봉년도, 주연 등에 대한 정보들 등을 메타데이터라고 한다.
+
+현재 쓰고 있는 파일은 다시 쓸 여지가 있다. Timely locality
+
+현재의 성능 < Worst situation ( 목표가 99%일경우 100-99 = 1% = 1/100)
+
+(1/4)^k < 0.01
+k <4 , k = 4
